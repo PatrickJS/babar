@@ -4,14 +4,11 @@ angular.module('app')
 .config(function($stateProvider) {
 
   $stateProvider
-  .when('home', {
-    url: '/account',
-    template: '<h1>hello</h1>'
+  .state('home', {
+    url: '',
+    templateUrl: '/templates/home.html'
   })
 
-  .otherwise({
-    redirectTo: '/'
-  });
 })
 .config(function($locationProvider) {
   // $locationProvider.html5Mode(true).hashPrefix('!');
