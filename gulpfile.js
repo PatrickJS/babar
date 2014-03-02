@@ -28,7 +28,7 @@ var config = {
       'client/controllers/*.js',
       'client/app.js',
       'client/config.js',
-      'client/state.js',
+      'client/states.js',
       '!client/styles',
       '!client/templates/'
     ],
