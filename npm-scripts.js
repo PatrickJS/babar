@@ -41,7 +41,6 @@ function preinstall() {
 }
 function postinstall() {
   exec('bower install');
-  exec('gulp install');
   console.log(grey('npm postinstall script executed'));
 }
 

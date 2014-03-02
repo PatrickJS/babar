@@ -44,8 +44,6 @@ module.exports = function(SERVER_ROOT) {
       }
     }));
   });
-
-
   app.get('/*', function(req, res) {
     return res.render('index', {env: app.get('env')});
   });
