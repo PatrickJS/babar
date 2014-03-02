@@ -1,0 +1,13 @@
+public/**
+circle.yml
+.git/*
+.gitignore
+.jshintrc
+README.md
+package.json
+bower.json
+Gruntfile.js
+gulpfile.js
+node_modules/**
+test/**
+log/**
