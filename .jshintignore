@@ -1,0 +1,6 @@
+dist/**
+public/js/bower_components/**
+public/js/shipper/config/development.js
+log/**
+config/config.js
+npm-scripts.js
