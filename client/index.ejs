@@ -7,6 +7,8 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+  <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css" />
   <title>Babar</title>
 
   <!-- Stylus CSS -->
@@ -23,6 +25,19 @@
 </head>
 <body ng-app="app">
 
+  <nav class="navbar navbar-default navbar-inverse navbar-static-top"
+       role="navigation"
+       ng-include="'/templates/navbar.html'">
+  </nav>
+  <div class="sidebar-background">
+    <div class="primary-sidebar-background"></div>
+  </div>
+
+  <div class="primary-sidebar" ng-include="">
+
+  </div>
+
+  <div ui-view></div>
   <div id="fb-root"></div>
 
   <script src="/bower_components/jquery/dist/jquery.js"></script>
