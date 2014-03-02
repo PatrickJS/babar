@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="fragment" content="!" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Babar</title>
+
+  <!-- Stylus CSS -->
+  <link href="/stylesheets/styles.css" rel="stylesheet">
+
+  <% if (env === 'development') { %>
+
+  <script src="//localhost:35729/livereload.js"></script>
+  <script type="text/javascript">
+    Error.stackTraceLimit = Infinity;
+  </script>
+
+  <% } %>
+</head>
+<body ng-app="app">
+
+  <div id="fb-root"></div>
+
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/underscore/underscore.js"></script>
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-route/angular-route.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="/bower_components/angular-bindonce/bindonce.js"></script>
+  <script src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <!-- Angular scripts -->
+  <script src="/javascripts/scripts.js"></script>
+
+  <% if (env === 'development') { %>
+
+  <script>
+    angular.module('app')
+
+  </script>
+
+  <% } else if (env === 'staging') { %>
+
+  <script>
+    angular.module('app')
+
+  </script>
+
+
+  <% } else { %>
+
+  <script>
+    angular.module('app')
+  </script>
+
+  <% } %>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+</body>
+</html>
