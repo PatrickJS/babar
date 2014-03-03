@@ -16,7 +16,6 @@ module.exports = function(SERVER_ROOT) {
   // Store all environment variables
   app.set('port', PORT);
   app.set('env', NODE_ENV);
-
   app.configure(function() {
     // App middleware
     app.use(cors());
@@ -28,6 +27,7 @@ module.exports = function(SERVER_ROOT) {
     app.use(express.methodOverride());
     app.use(express.cookieParser());
     app.use(express.session({secret: 'yolo'}));
+    // app.use(express.compress());
     // app.use(express.session());
     app.use('/bower_components', express.static(path.join(app.directory, 'bower_components')));
     app.use('/templates', express.static(path.join(app.directory, 'client/templates')));
