@@ -33,16 +33,16 @@ module.exports = function(SERVER_ROOT) {
     app.use('/templates', express.static(path.join(app.directory, 'client/templates')));
     app.use(express.static(path.join(app.directory, 'public')));
     app.use(app.router);
-    app.use(stylus.middleware({
-      src: app.directory + '/client/styles',
-      dest: app.directory + '/public/stylesheets',
-      compile: function(str, path, fn) {
-        stylus(str)
-        .set('filename', path)
-        .set('compress', true)
-        .render(fn);
-      }
-    }));
+    // app.use(stylus.middleware({
+    //   src: app.directory + '/client/styles',
+    //   dest: app.directory + '/public/stylesheets',
+    //   compile: function(str, path, fn) {
+    //     stylus(str)
+    //     .set('filename', path)
+    //     .set('compress', true)
+    //     .render(fn);
+    //   }
+    // }));
   });
   app.get('/*', function(req, res) {
     return res.render('index', {env: app.get('env')});
