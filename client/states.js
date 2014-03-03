@@ -1,31 +1,49 @@
 'use strict';
 
 angular.module('app')
-.config(function($stateProvider) {
+.constant('templateBaseUrl', '/templates')
+.config(function($stateProvider, templateBaseUrl) {
 
   $stateProvider
   .state( 'app', {
     url: '',
-    templateUrl: '/templates/ng-view.html',
     abstract: true,
-    controller: 'AppCtrl'
+    views: {
+      'main': {
+        templateUrl: templateBaseUrl + '/ng-view.html',
+        controller: 'DashboardCtrl'
+      },
+      'navbar': {
+        templateUrl: templateBaseUrl + '/navbar.html',
+        controller: 'NavbarCtrl'
+      },
+      'sidebar': {
+        templateUrl: templateBaseUrl + '/sidebar.html',
+        controller: 'SidebarCtrl'
+      }
+    }
   })
   .state('app.dashboard', {
     url: '/dashboard',
-    templateUrl: '/templates/dashboard.html'
+    templateUrl: templateBaseUrl + '/dashboard.html'
   });
 
 })
+.config(function($urlRouterProvider) {
+
+  $urlRouterProvider
+    .when('/', '/dashboard')
+    .otherwise('/dashboard');
+
+})
 .config(function($locationProvider) {
+
   $locationProvider.html5Mode(true).hashPrefix('!');
-})
-
-.controller('AppCtrl', function($scope, $stateParams, $state) {
-  $scope.$state = $state;
-  $scope.$stateParams = $stateParams;
 
 })
+.run(function($rootScope, $stateParams, $state) {
 
-.run(function() {
+  $rootScope.$state = $state;
+  $rootScope.$stateParams = $stateParams;
 
 });
