@@ -25,25 +25,19 @@
 </head>
 <body ng-app="app">
 
-  <nav class="navbar navbar-default navbar-inverse navbar-static-top"
-       role="navigation"
-       ng-include="'/templates/navbar.html'">
-  </nav>
+  <nav ui-view="navbar"
+       class="navbar navbar-default navbar-inverse navbar-static-top"></nav>
   <div class="sidebar-background">
     <div class="primary-sidebar-background"></div>
   </div>
 
-  <div class="primary-sidebar" ng-include="'/templates/sidebar.html'">
+  <div class="primary-sidebar" ui-view="sidebar"></div>
 
-  </div>
+  <div class="main-content" ui-view="main" autoscroll="true"></div>
 
-  <div class="main-content" ui-view></div>
-
-  <div id="fb-root"></div>
 
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/underscore/underscore.js"></script>
-
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.js"></script>
   <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
