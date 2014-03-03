@@ -12,6 +12,9 @@ module.exports = function(app, config) {
     }
   };
 
+
+
+
   console.log('Database Initialized');
 
   return DB;
